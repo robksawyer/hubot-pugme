@@ -20,7 +20,7 @@ module.exports = (robot) ->
 
   robot.respond /pug bomb( (\d+))?/i, (msg) ->
     count = msg.match[2] || 5
-    if count > 20
+    if parseInt(count) > 20
       return msg.reply "Fuck off!"
       
     msg.http("http://pugme.herokuapp.com/bomb?count=" + count)
